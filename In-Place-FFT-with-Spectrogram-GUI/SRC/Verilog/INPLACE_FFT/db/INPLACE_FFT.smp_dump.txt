@@ -1,0 +1,77 @@
+
+State Machine - |TOP|FFT_CONTROLER:unit_FFT_CONTROLLER|r_ps
+Name r_ps.ST_WAIT r_ps.ST_DONE r_ps.ST_DATA_SEND r_ps.ST_DATA_SETUP r_ps.ST_MEMORY_READ r_ps.ST_FIND r_ps.ST_FFT_STEP9 r_ps.ST_FFT_STEP8 r_ps.ST_FFT_STEP7 r_ps.ST_FFT_STEP6 r_ps.ST_FFT_STEP5 r_ps.ST_FFT_STEP4 r_ps.ST_FFT_STEP3 r_ps.ST_FFT_STEP2 r_ps.ST_FFT_STEP1 r_ps.ST_BANK_CNT r_ps.ST_MEMORY_WRITE r_ps.ST_BANK_INIT r_ps.ST_ROM_DATA_SETUP r_ps.ST_ROM_READ r_ps.ST_IDLE 
+r_ps.ST_IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+r_ps.ST_ROM_READ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+r_ps.ST_ROM_DATA_SETUP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+r_ps.ST_BANK_INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+r_ps.ST_MEMORY_WRITE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+r_ps.ST_BANK_CNT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+r_ps.ST_FFT_STEP1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+r_ps.ST_FFT_STEP2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+r_ps.ST_FFT_STEP3 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+r_ps.ST_FFT_STEP4 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+r_ps.ST_FFT_STEP5 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+r_ps.ST_FFT_STEP6 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+r_ps.ST_FFT_STEP7 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+r_ps.ST_FFT_STEP8 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r_ps.ST_FFT_STEP9 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r_ps.ST_FIND 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r_ps.ST_MEMORY_READ 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r_ps.ST_DATA_SETUP 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r_ps.ST_DATA_SEND 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r_ps.ST_DONE 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r_ps.ST_WAIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |TOP|FFT_CONTROLER:unit_FFT_CONTROLLER|Find_Data:unit_FD|r_ps
+Name r_ps.ST_DONE r_ps.ST_WAIT r_ps.ST_TX_EN r_ps.ST_MEMORY_READ r_ps.ST_MEMORY_ADDR_OUT r_ps.ST_IDLE 
+r_ps.ST_IDLE 0 0 0 0 0 0 
+r_ps.ST_MEMORY_ADDR_OUT 0 0 0 0 1 1 
+r_ps.ST_MEMORY_READ 0 0 0 1 0 1 
+r_ps.ST_TX_EN 0 0 1 0 0 1 
+r_ps.ST_WAIT 0 1 0 0 0 1 
+r_ps.ST_DONE 1 0 0 0 0 1 
+
+State Machine - |TOP|FFT_CONTROLER:unit_FFT_CONTROLLER|Exponentgen:unit_Exponentgen|r_ps
+Name r_ps.s_0 r_ps.s_2 r_ps.s_1 
+r_ps.s_0 0 0 0 
+r_ps.s_1 1 0 1 
+r_ps.s_2 1 1 0 
+
+State Machine - |TOP|FFT_CONTROLER:unit_FFT_CONTROLLER|ADDRgen:unit_ADDRgen|r_ps
+Name r_ps.s_0 r_ps.s_2 r_ps.s_1 
+r_ps.s_0 0 0 0 
+r_ps.s_1 1 0 1 
+r_ps.s_2 1 1 0 
+
+State Machine - |TOP|FFT_CONTROLER:unit_FFT_CONTROLLER|BANK_INIT:unit_BI|r_ps
+Name r_ps.ST_DONE r_ps.ST_MEMORY_WRITE r_ps.ST_MEMORY_ADDR_OUT r_ps.ST_ROM_DATA_IN r_ps.ST_ROM_ADDR_OUT r_ps.ST_IDLE 
+r_ps.ST_IDLE 0 0 0 0 0 0 
+r_ps.ST_ROM_ADDR_OUT 0 0 0 0 1 1 
+r_ps.ST_ROM_DATA_IN 0 0 0 1 0 1 
+r_ps.ST_MEMORY_ADDR_OUT 0 0 1 0 0 1 
+r_ps.ST_MEMORY_WRITE 0 1 0 0 0 1 
+r_ps.ST_DONE 1 0 0 0 0 1 
+
+State Machine - |TOP|UART_CONTROLLER:unit_UART_CONTROLLER|r_ps
+Name r_ps.ST_FFT r_ps.ST_SHIFT r_ps.ST_SEND r_ps.ST_IDLE 
+r_ps.ST_IDLE 0 0 0 0 
+r_ps.ST_SEND 0 0 1 1 
+r_ps.ST_SHIFT 0 1 0 1 
+r_ps.ST_FFT 1 0 0 1 
+
+State Machine - |TOP|UART_CONTROLLER:unit_UART_CONTROLLER|uart_tx:uart_tx|r_SM_Main
+Name r_SM_Main.s_TX_STOP_BIT r_SM_Main.s_TX_DATA_BITS r_SM_Main.s_TX_START_BIT r_SM_Main.000 r_SM_Main.s_CLEANUP 
+r_SM_Main.000 0 0 0 0 0 
+r_SM_Main.s_TX_START_BIT 0 0 1 1 0 
+r_SM_Main.s_TX_DATA_BITS 0 1 0 1 0 
+r_SM_Main.s_TX_STOP_BIT 1 0 0 1 0 
+r_SM_Main.s_CLEANUP 0 0 0 1 1 
+
+State Machine - |TOP|UART_CONTROLLER:unit_UART_CONTROLLER|uart_rx:uart_rx|r_SM_Main
+Name r_SM_Main.s_RX_STOP_BIT r_SM_Main.s_RX_DATA_BITS r_SM_Main.s_RX_START_BIT r_SM_Main.000 r_SM_Main.s_CLEANUP 
+r_SM_Main.000 0 0 0 0 0 
+r_SM_Main.s_RX_START_BIT 0 0 1 1 0 
+r_SM_Main.s_RX_DATA_BITS 0 1 0 1 0 
+r_SM_Main.s_RX_STOP_BIT 1 0 0 1 0 
+r_SM_Main.s_CLEANUP 0 0 0 1 1 
